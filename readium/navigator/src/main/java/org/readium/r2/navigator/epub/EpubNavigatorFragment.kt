@@ -778,10 +778,7 @@ public class EpubNavigatorFragment internal constructor(
             paginationListener?.onPageLoaded()
 
             val href = link.url()
-            if (state is State.Initializing || (state as? State.Loading)?.initialResourceHref?.isEquivalent(
-                    href
-                ) == true
-            ) {
+            if (state is State.Initializing || state is State.Loading) {
                 state = State.Ready
             }
 
